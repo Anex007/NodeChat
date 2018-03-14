@@ -1,0 +1,45 @@
+
+body{
+	/*background-color: #ffcccc;
+	*/
+	background: url('/images/join-back.jpg');
+}
+
+.main{
+	height: 50%;
+	width: 60%;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 15px;
+	padding-right: 15px;
+	background-color: #e6e6ff;
+	position: relative;
+	top: 0%;
+	left: 20%;
+}
+
+.display-3{
+	text-align: center;
+}
+
+.form-control {
+	width: 60%;	
+}
+
+.form-group {
+	position: relative;
+	top: 0;
+	left: 20%;
+}
+
+.my-btn {
+	position: relative;
+	top: 0;
+	left: 48%;
+}
+
+.jumbotron{
+	background-color: #9966ff;
+}
+ 
+

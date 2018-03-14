@@ -1,0 +1,53 @@
+<DOCTYPE html>
+<html>
+  <head>
+  	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+
+	<title>Join Now!!</title>
+
+	<link rel="stylesheet" href="/stylesheets/join-styles.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="main rounded">
+      	<div class="display-3">Join</div>
+
+      <form action="/join" method="post">
+	<div class="form-group">
+      		Invite: <input type="text" class="form-control" name="invite" />
+	</div>
+	<div class="form-group">
+      		Username: <input type="text" class="form-control" name="username" />
+	</div>
+	<div class="form-group">
+      		Password: <input type="password" class="form-control" name="password" />
+	</div>
+      <input type="submit" class="btn btn-primary my-btn" value="Join" />
+      <br />
+      <% if (message != 'Nan') {  %>
+	<div class="alert alert-danger alert-dismissable rounded">
+		<%= message %>
+		<button type="button" class="close" data-dismiss="alert"> &times;</button>
+	</div>
+      <% } %>
+
+    </form>
+    </div>
+        <div class="jumbotron">
+        <div class="info">
+        You need special invites to get into the chat of this server, and you probably know who to ask for too.
+        So why the fuck are you here!!!
+        </div>
+      </div>
+    </div>
+    
+  </body>
+
+</html>

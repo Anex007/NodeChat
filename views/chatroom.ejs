@@ -1,0 +1,67 @@
+<DOCTYPE html>
+<html>
+  <head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+
+	<title>Chat Room</title>
+
+	<link rel="stylesheet" type="text/css" href="/stylesheets/chat_styles.css">
+  
+  </head>
+  <body>
+	<div id="Menu">
+		<div id="MenuIcon" data-id="<%= me %>">
+			<img id="ProfilePic" class="rounded" src="/images/default-user.png"/>
+			<div id="UserMenu"></div>	
+		</div>
+		<div id="MainMenu">
+		   <ul>
+			<form method="POST" action="/users/<%=me%>" target="_self" id="formUpload" enctype="multipart/form-data">
+			  <input id="Uploader" name="avatar" type="file" accept="image/*" hidden/>
+			  <input id="Submitter" type="submit" value="Save" hidden/>
+			</form>
+			<li><a class="MenuItems" href="#chgpropic" id="ChangePic">Change Profile Picture</a></li>
+			<li><a class="MenuItems" href="/logout">Logout</a></li>
+			<li><a class="MenuItems" href="/contact">Contact Admin</a></li>
+		   </ul>
+		   <iframe id="upload_targ" src="#" style="width:0;height:0;border:0px solid #fff;"></iframe>
+		</div>
+	</div> 
+
+  	<div id="chat" class="container">
+	  	<div class="chat">
+			<div class="messages">
+			<% chat.forEach(function(message){ %>
+				<div class="message" data-id="<%=message._id%>">
+				    <div class="author" data-user="<%=message.from%>" > </div>
+				    <span class="msg-time" data-time="<%=message.time%>"></span>
+				    <div class="msg-content"> <%= message.content %> </div>
+				</div>
+			<% }); %>
+	  		</div>
+	  		<div id="input-holder" class="fixed-bottom">
+				<div class="form-group">
+	  			   <input type="textarea" maxlength="1000" id="message-input" rows="10" class="form-control" placeholder="Message your Friends" name="content"/>
+				</div>
+	  		</div>
+	  	</div>
+	  </div>
+  	<div id="users" class="container">
+		<% //**********Make sure to add some user profiling********** %>
+		<% users.forEach(function(user){ %>
+  			<div class="user" data-user="<%=user%>">
+				<img class="userPic" src="/uploads/default-user.png"/>
+			</div>
+		<% }); %>
+   	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+	<script src="/javascripts/chatroom.js"></script>
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>	
+
+  </body>
+
+</html>

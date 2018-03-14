@@ -1,0 +1,66 @@
+<DOCTYPE html>
+<html>
+  <head>
+  	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+	<title>Login</title>
+	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">	
+  	<style>
+	.chatHead {
+		color: #6666ff;
+		font-family: 'Pacifico', cursive;
+	}
+
+	body {
+		background-color: #66ffff;
+
+	}
+	
+	.form-control, .rounded{
+		width: 40%;
+	}
+
+	</style>
+
+  </head>
+  <body>
+  	
+    <div class="container">
+
+      <div class="display-2 chatHead">
+	Login to Chatroom
+      </div>
+
+      <br/><br/><br/><br/>
+
+      <form action="/login" method="post">
+	<div class="form-group">
+		<label for="usrname">Username:</label>
+		<input type="text" class="form-control" name="username" id="usrname" />
+	</div>
+
+	<div class="form-group">
+		<label for="pwd">Password: </label>
+		<input type="password" class="form-control" name="password" id="pwd" />
+	</div>
+	
+	<button type="submit" class="btn btn-primary">Submit</button>
+	<br/>
+	<br/>	
+	<% if ( message != 'Nan') {  %>
+		<div class="alert alert-danger alert-dismissable rounded">
+			<%= message %>
+			<button type="button" class="close" data-dismiss="alert"> &times;</button>
+		</div>
+	<% } %>
+
+      </form>
+  </body>
+
+</html>
